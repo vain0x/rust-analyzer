@@ -51,7 +51,7 @@ fn expr_no_struct(p: &mut Parser) {
 
 fn is_expr_stmt_attr_allowed(kind: SyntaxKind) -> bool {
     match kind {
-        BIN_EXPR | RANGE_EXPR | IF_EXPR => false,
+        BIN_EXPR | RANGE_EXPR => false,
         _ => true,
     }
 }
@@ -87,7 +87,7 @@ pub(super) fn stmt(p: &mut Parser, with_semi: StmtWithSemi) {
         // test_err attr_on_expr_not_allowed
         // fn foo() {
         //    #[A] 1 + 2;
-        //    #[B] if true {};
+        //    #[B] while true {};
         // }
         p.error(format!("attributes are not allowed on {:?}", kind));
     }
