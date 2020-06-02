@@ -247,6 +247,8 @@ fn main() {
 
     println!("{\x41}", A = 92);
     println!("{ничоси}", ничоси = 92);
+
+    unreachable!("{}", "something wrong");
 }"#
         .trim(),
     );

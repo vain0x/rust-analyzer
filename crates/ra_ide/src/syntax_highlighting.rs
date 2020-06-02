@@ -147,7 +147,7 @@ pub(crate) fn highlight(
                     fmt_macro_call.path().and_then(|p| p.segment()).and_then(|s| s.name_ref())
                 {
                     match name.text().as_str() {
-                        "format_args" | "format_args_nl" => {
+                        "format_args" | "format_args_nl" | "unreachable" => {
                             format_string = parent
                                 .children_with_tokens()
                                 .filter(|t| t.kind() != WHITESPACE)
